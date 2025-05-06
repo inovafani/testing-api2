@@ -1,3 +1,8 @@
+<?php 
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -124,6 +129,19 @@
               <div class="col-md-8">
                 <h5>inovafani</h5>
                 <p>2000 Followers</p>
+              </div>
+            </div>
+            <div class="row mt-3 pb-3">
+              <div class="col">
+                <div class="ig-thumbnail">
+                  <img src="img/thumbs/1.png" alt="">
+                </div>
+                <div class="ig-thumbnail">
+                  <img src="img/thumbs/2.png" alt="">
+                </div>
+                <div class="ig-thumbnail">
+                  <img src="img/thumbs/3.png" alt="">
+                </div>
               </div>
             </div>
           </div>
