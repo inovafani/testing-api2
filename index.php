@@ -1,6 +1,25 @@
 <?php 
+function get_curl($url){
+  $curl = curl_init();
+  curl_setopt($curl, CURLOPT_URL, $url);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+  $result = curl_exec($curl);
+  curl_close($curl);
+
+  return json_decode($result, true);
+}
+
+$result = get_curl('https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=UCQ4nwWIFvcecah4sEICwdLw&key=AIzaSyA9VjbbBQcNkIpYqcBbTUNYkPAv8n9zx-I');
 
 
+$ytProfPic = $result['items'][0]['snippet']['thumbnails']['medium']['url'];
+$channelName = $result['items'][0]['snippet']['title'];
+$subs = $result['items'][0]['statistics']['subscriberCount'];
+
+// latest video 
+$latestVideo = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyA9VjbbBQcNkIpYqcBbTUNYkPAv8n9zx-I&channelId=UCQ4nwWIFvcecah4sEICwdLw&maxResults=1&order=date&part=snippet';
+$result2 = get_curl($latestVideo);
+$latestVideoId = $result2['items'][0]['id']['videoId'];
 
 ?>
 <!DOCTYPE html>
@@ -106,17 +125,18 @@
           <div class="col-md-5">
             <div class="row">
               <div class="col-md-4">
-              <img src="img/profile1.png" width="200" class="rounded-circle img-thumbnail">
+              <img src="<?= $ytProfPic ?>" width="200" class="rounded-circle img-thumbnail">
               </div>
               <div class="col-md-8">
-                <h5>Inov Afani</h5>
-                <p>195 Subscribers</p>
+                <h5><?= $channelName ?></h5>
+                <p><?= $subs ?> Subscribers</p>
+                <div class="g-ytsubscribe" data-channelid="UCQ4nwWIFvcecah4sEICwdLw" data-layout="default" data-count="hidden"></div>
               </div>
             </div>
             <div class="row mt-3 pb-3">
               <div class="col">
               <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= $latestVideoId ?>?rel=0" allowfullscreen></iframe>
               </div>
               </div>
             </div>
@@ -339,5 +359,6 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
   </body>
 </html>

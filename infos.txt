@@ -1,1 +1,2 @@
-Youtube API = AIzaSyA9VjbbBQcNkIpYqcBbTUNYkPAv8n9zx-I
+Youtube API Key = AIzaSyA9VjbbBQcNkIpYqcBbTUNYkPAv8n9zx-I
+Channel ID Inov = UCQ4nwWIFvcecah4sEICwdLw
