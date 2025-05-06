@@ -90,9 +90,48 @@
     </section>
 
     <!-- Youtube & IG -->
-    <section></section>
+    <section class="social bg-light" id="social">
+      <div class="container">
+        <div class="row pt-4 mb-4">
+          <div class="col text-center">
+            <h2>Social Media</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-5">
+            <div class="row">
+              <div class="col-md-4">
+              <img src="img/profile1.png" width="200" class="rounded-circle img-thumbnail">
+              </div>
+              <div class="col-md-8">
+                <h5>Inov Afani</h5>
+                <p>195 Subscribers</p>
+              </div>
+            </div>
+            <div class="row mt-3 pb-3">
+              <div class="col">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="img/profile1.png" width="200" class="rounded-circle img-thumbnail">
+              </div>
+              <div class="col-md-8">
+                <h5>inovafani</h5>
+                <p>2000 Followers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <section id="porto" class="porto bg-light pb-4">
+    <section id="porto" class="porto pb-4">
       <div class="container">
         <div class="row pt-4 mb-4">
           <div class="col text-center">
@@ -197,7 +236,7 @@
       </div>
     </section>
 
-    <section id="contact" class="contact pb-4 mb-4">
+    <section id="contact" class="contact bg-light pb-4 mb-4">
       <div class="container">
         <div class="row pt-4 mb-4">
           <div class="col text-center">
