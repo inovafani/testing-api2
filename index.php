@@ -16,10 +16,10 @@ $ytProfPic = $result['items'][0]['snippet']['thumbnails']['medium']['url'];
 $channelName = $result['items'][0]['snippet']['title'];
 $subs = $result['items'][0]['statistics']['subscriberCount'];
 
-// latest video 
-$latestVideo = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyA9VjbbBQcNkIpYqcBbTUNYkPAv8n9zx-I&channelId=UCQ4nwWIFvcecah4sEICwdLw&maxResults=1&order=date&part=snippet';
-$result2 = get_curl($latestVideo);
-$latestVideoId = $result2['items'][0]['id']['videoId'];
+// most viewed video 
+$mostVideo = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyA9VjbbBQcNkIpYqcBbTUNYkPAv8n9zx-I&channelId=UCQ4nwWIFvcecah4sEICwdLw&maxResults=1&order=viewCount&part=snippet';
+$result2 = get_curl($mostVideo);
+$mostVideoId = $result2['items'][0]['id']['videoId'];
 
 ?>
 <!DOCTYPE html>
@@ -136,7 +136,7 @@ $latestVideoId = $result2['items'][0]['id']['videoId'];
             <div class="row mt-3 pb-3">
               <div class="col">
               <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= $latestVideoId ?>?rel=0" allowfullscreen></iframe>
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?= $mostVideoId ?>?rel=0" allowfullscreen></iframe>
               </div>
               </div>
             </div>
